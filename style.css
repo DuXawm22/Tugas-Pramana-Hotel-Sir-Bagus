@@ -1,0 +1,15 @@
+*{background-color: #000000;color: #FDFEFE}
+footer {text-align: center;}
+img {margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle }
+
+.menu ul {list-style:none;margin: 0;padding: 0;text-align: center; }
+.menu ul li {display: inline-block;}
+.menu ul li a {text-decoration:none; color:#FDFEFE;padding: 8px 165px;display: block; margin-right: 8px;}
+.menu ul li a h3:hover{color: #2ECC71;}
+.footer {position:relative;bottom: 0;}
+.bookroom{text-align: center;}
+

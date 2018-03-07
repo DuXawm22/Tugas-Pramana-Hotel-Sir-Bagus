@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking Room</title>
+	<script>
+
+function validateNameForm()
+	{
+	var name=document.Nameform.name.value;    
+  
+	if (name==null || name==""){  
+	  alert("Name required");  
+	  return false;  
+			}
+		}
+function validateEmail()  
+	{  
+	var x=document.myEmail.email.value;  
+	var atposition=x.indexOf("@");  
+	var dotposition=x.lastIndexOf(".");  
+	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+	  alert("Please enter a valid e-mail address");  
+	  return false;  
+	  }  
+	}  
+function validatePhone(){  
+	var num=document.myNumber.Phone.value;  
+	if (isNaN(num)){  
+	  document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+	  return false;  
+	}else{  
+	  return true;  
+	  }  
+	}  
+	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<header>
+			<img src="logo2.png">
+		</header>
+	<div class="menu">
+	<table border="1" width="100%" cellpadding="5" align="center">
+	<ul>
+		<li><a href="home.html"><h3>Home</h3></a></li>
+		<li><a href="facility.html"><h3>Facility</h3></a></li>
+		<Li><a href="Booking Room.html"><h3>Booking Room</h3></a></Li>
+	</ul>
+	</table>
+	</div>
+<table border="1" width="40%" cellpadding="5" align="center">
+<tr>
+	<TD colspan = 2 align ='center'>
+		BOOK ROOM
+	</TD>
+</tr>
+<TR>
+	<TD>Name</TD>
+	<TD>
+	<form name="NameForm" action="abc.jsp" onsubmit="return validateNameForm()" required>
+		<input type="text" name="name">
+	</form>
+	</TD>
+</TR>
+<TR>
+	<TD>Email</TD>
+	<TD>
+		<form name="myEmail" method="post" onsubmit="return validateEmail();">
+			<input type="text" name="email" required>
+		</form>
+	</TD>
+</TR>
+<TR>
+	<TD>Phone</TD>
+	<TD>
+		<form name="myNumber" onsubmit="validatePhone()">
+			<input type="number" name="Phone" required><span id="numloc"></span><br/>
+		</form>
+	</TD>
+</TR>
+<TR>
+	<TD>Stay in Date</TD>
+	<TD>
+		<form><input id="datetime" type="datetime-local" required></form>
+	</TD>
+</TR>
+<TR>
+	<TD>Length of Stay (days)</TD>
+	<TD>
+		<form>
+			<input type="number" name="LengthOfStay" required min="1">
+			<label> Day(s)</label>
+		</form>
+	</TD>
+</TR>
+<TR>
+	<TD>Room Type</TD>
+	<TD>
+		<form>
+			<select required>
+ 	 		<option value="SelectOne">Select One</option>
+  			<option value="DeluxeR">Deluxe Room - $ 274</option>
+  			<option value="DeluxePV">Deluxe Pool Villa - $438</option>
+  			<option value="1BPV">1 Bedroom Pool Villa - $525</option>
+  			<option value="2BPV">2 Bedroom Pool Villa - $635</option>
+			</select>
+		</form>
+	</TD>
+</TR>
+<TR>
+	<TD>Additional Charge</TD>
+	<TD>
+		<form>
+		<input type="checkbox" name="addCharge" value="ExtraBed" required>Extra Bed - 80$<br>
+		<input type="checkbox" name="addCharge" value="AirShuttle" required>Airport Shuttle - 40$<br>
+		<input type="checkbox" name="addCharge" value="UbudTour" required>Ubud Tour 1D - 100$<br>
+		</form>
+	</TD>
+</TR>
+<TR>
+	<TD colspan = 2 >
+	<form method="POST" action="Booking Room Confirm.html" onsubmit="validateNameForm()">
+		<input type="submit" value="Submit">
+		</form>
+	</TD>
+</TR>
+</table>
+<div class="footer">
+<footer>&copy;2017 Pramana Experience - All Rights Reserved</footer>
+</div>
+</body>
+
+</html>
